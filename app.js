@@ -4,8 +4,7 @@ const form = document.querySelector("form");
 
 function getGiphy() {
   fetch(
-    `https://api.giphy.com/v1/gifs/translate?api_key=${key}&s=${input.value}`,
-    { mode: "cors" }
+    "/.netlify/functions/fetchGiphy?input=" + encodeURIComponent(input.value)
   )
     .then((response) => {
       return response.json();
